@@ -6,27 +6,26 @@ import { DisplayValueHeader } from "pixel_combats/basic";
 // --- структура ---
 
 // имя значения (propertiesId)
-const VALUE = "ExampleName";
+const VALUE = "propid";
 // выводимый заголовок (если null тогда VALUE)
 const DISPLAY_NAME = "ExampleDisplayName";
 // сокращенное выводимое значение (если null тогда SHORT_DISPLAY_NAME)
 const SHORT_DISPLAY_NAME = "ExampleShortDisplayName";
-
 const displayValueHeader = new DisplayValueHeader(VALUE, DISPLAY_NAME, SHORT_DISPLAY_NAME);
 
 // --- лидерборд ---
 		
 // имя значения, которые следует выводить в лидерборде для игрока
 LeaderBoard.PlayerLeaderBoardValues = [
-	new DisplayValueHeader(VALUE, DISPLAY_NAME, SHORT_DISPLAY_NAME);
+	displayValueHeader
 ];
 // имя значение, которое необходимо выводить для лидерборда команд		
-LeaderBoard.TeamLeaderBoardValue = new DisplayValueHeader(VALUE, DISPLAY_NAME, SHORT_DISPLAY_NAME);
+LeaderBoard.TeamLeaderBoardValue = displayValueHeader;
 
 // функция сравнения команд (Принимает команду, возвращает значение веса команды в лидерборде (team.Properties.Get("propId").Value))
-LeaderBoard.TeamWeightGetter.Set(team => team.Properties.Get("propId").Value);
+LeaderBoard.TeamWeightGetter.Set(team => team.Properties.Get(VALUE).Value);
 // функция сравнения игроков (Принимает игрока, возвращает значение веса игрока в лидерборде (player.Properties.Get("propId").Value))
-LeaderBoard.PlayersWeightGetter.Set(player => player.Properties.Get("propId").Value);
+LeaderBoard.PlayersWeightGetter.Set(player => player.Properties.Get(VALUE).Value);
 	
 // возвращает лидерборд команд в комнате		
 var g_t = LeaderBoard.GetTeams();	
