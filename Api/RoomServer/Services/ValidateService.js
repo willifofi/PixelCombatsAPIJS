@@ -2,12 +2,13 @@
 import { Validate } from 'pixel_combats/room';
 	
 // если истина, то режим валидный	
-const g_valid = Validate.IsValid { get; }		
+const g_valid = Validate.IsValid;	
 // сообщение о невалидности
-const g_v_msg =  Validate.Message;
+const g_v_msg = Validate.Message;
 	
 // сообщает в систему о неполадке в режиме		
 Validate.ReportInvalid("message");
+
 // если это дело вызвать то все последующие вызовы репортов не учитываются
 Validate.ReportValid();
 
