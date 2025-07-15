@@ -3,7 +3,7 @@
 import { Permissions } from "pixel_combats/room";
 
 // имя файла разрешений ("client/room/permissions.json")
-Permissions.GAME_MODE_ROOM_PERMISSIONS;
+const Permissions.GAME_MODE_ROOM_PERMISSIONS;
 
 // разрешения в комнате	
 //(чтобы разрешения в комнате были нестандартные (Permissions.Value.Default)
@@ -11,6 +11,6 @@ Permissions.GAME_MODE_ROOM_PERMISSIONS;
 const params = Permissions.Value;
 	
 // можно ли закрывать комнату		
-params.CloseRoom; // bool (true, false)	
+var params.CloseRoom; // bool (true, false)	
 // разрешения в комнате по умолчанию	
-params.Default;
+const params.Default;
