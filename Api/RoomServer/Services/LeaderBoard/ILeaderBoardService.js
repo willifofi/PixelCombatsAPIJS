@@ -1,19 +1,12 @@
-﻿using JavaScriptEngine.DataAnnotations;
-using PixelCombats.Api.RoomServer.Basic;
-using PixelCombats.Api.RoomServer.Services.Players;
-using PixelCombats.Api.RoomServer.Services.Teams;
-using System.Collections.Generic;
+// ветка room_api.LeaderBoard
+import { LeaderBoard } from "pixel_combats/room";
 
-namespace PixelCombats.Api.RoomServer.Services.LeaderBoard
-{
-	/// <summary>
-	/// лидерборд - определяет списки лидирующих игроков и команд
-	/// </summary>
-	[ScriptObject("LeaderBoard", ScriptModuleNames.ROOM_API)]
-	public interface ILeaderBoardService : IComparer<IPlayerApi>
-	{
-		/// <summary>
-		/// функция сравнения игроков
+
+LeaderBoard.PlayerLeaderBoardValues = [
+	new DisplayValueHeader("")
+];
+
+// функция сравнения игроков
 		/// <para>Принимает игрока, возвращает значение веса игрока в лидерборде.</para>
 		/// </summary>
 		ApiFunc<IPlayerApi, int> PlayersWeightGetter { get; set; }
