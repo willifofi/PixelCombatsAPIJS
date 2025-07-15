@@ -1,4 +1,4 @@
-// ветка room_api.Map - ервис работы с картой
+// ветка room_api.Map - cервис работы с картой
 import { Map } from 'pixel_combats/room';
 	
 // возвращает метаданные текущей карты.	
@@ -13,7 +13,7 @@ const m_rot = Map.MapListId;
 // карта может быть изменена только на случайную, из списка стандартных карт
 Map.Rotation = false;
 // если это возможно, то включит случайную карту из текущего списка карт
- Map.LoadRandomMap();
+Map.LoadRandomMap();
 
 // происходит, если загрузилась карта	 
 Map.OnLoad.Add(function(){});
