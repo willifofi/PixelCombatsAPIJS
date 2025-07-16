@@ -39,7 +39,9 @@ const ui = Ui.GetContext(Players.Get("player_Id"));
 
 ## Свойства UI
 
-### `ui.MainTimerId.Value`
+```js
+ui.MainTimerId.Value
+```
 
 - **Описание**: ID основного таймера комнаты.
 - **Расположение**: Центр верхней части экрана.
@@ -48,7 +50,9 @@ const ui = Ui.GetContext(Players.Get("player_Id"));
 
 ---
 
-### `ui.Hint.Value`
+```js 
+ui.Hint.Value
+```
 
 - **Описание**: Текст подсказки, отображаемой всем игрокам.
 - **Расположение**: Зависит от реализации движка, обычно центральный баннер.
@@ -60,8 +64,9 @@ ui.Hint.Value = "ЗАСТРОЙ БАЗУ!";
 
 ---
 
-### ```js
-tsui.QuadsCount.Value```
+```js 
+ui.QuadsCount.Value
+```
 
 - **Описание**: Отвечает за отображение количества квадратов у игрока.
 - **Значение по умолчанию**: `false`
@@ -73,7 +78,12 @@ ui.QuadsCount.Value = false; // скрыть количество квадов
 
 ---
 
-### `ui.TeamProp1.Value` и `ui.TeamProp2.Value`
+```js 
+ui.TeamProp1.Value
+```
+```js
+ `ui.TeamProp2.Value`
+```
 
 - **Описание**: Установка свойств команды, отображаемых в интерфейсе.
 - **Расположение**:
