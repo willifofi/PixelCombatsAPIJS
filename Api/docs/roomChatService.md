@@ -41,7 +41,8 @@ Chat.OnMessage.Add(function(message) {
   // ID отправителя (0 — сервер)
   const senderId = message.Sender;
 
-  if (senderId === 0) return; // игнорируем сообщения от сервера
+  // игнорируем сообщения от сервера
+  if (senderId === 0) return; 
 
   // Имя игрока (может быть null)
   const nickname = message.NickName;
@@ -53,7 +54,7 @@ Chat.OnMessage.Add(function(message) {
   const teamId = message.TeamId;
 
   // Пример вывода
-  console.log(`[${teamId ?? 'Нет команды'}] ${nickname}: ${text}`);
+Players.Get(senderId).PopUp(`[${teamId ?? 'Нет команды'}] ${nickname}: ${text}`);
 });
 ```
 
