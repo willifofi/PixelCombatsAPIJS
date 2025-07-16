@@ -76,19 +76,19 @@ get_player.Rotation = new Vector3(1,1,0);
 
 // контекст переменных игрока (см сервис PropertiesService)
 const p_prop = Properties.GetContext(get_player);
-// апи спавнов игрока
+// апи спавнов игрока (см сервис PropertiesService)
 const p_spawns = Spawns.GetContext(get_player);
-// апи инвентаря игрока
+// апи инвентаря игрока (см сервис PropertiesService)
 const p_inventory = Inventory.GetContext(get_player);
-// таймеры игрока
+// таймеры игрока (см сервис PropertiesService)
 const p_timers = Timers.GetContext(get_player);
-// строительство игрока
+// строительство игрока (см сервис PropertiesService)
 const p_bild = Build.GetContext(get_player);
-// контекст урона
+// контекст урона (см сервис PropertiesService)
 const p_damage = Damage.GetContext(get_player);
-// контекст пользовательского интерфейса
+// контекст пользовательского интерфейса (см сервис UIService)
 const p_ui = Ui.GetContext(get_player);
-// контекстные свойства
+// контекстные свойства (см сервис PropertiesService)
 const p_prop_context = ContextedProperties.GetContext(get_player);
 
 // задает одновременно и позицию и вращение игрока
