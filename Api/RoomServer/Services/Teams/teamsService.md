@@ -5,8 +5,7 @@
 ## Импорты
 
 ```ts
-import { Teams } from "pixel_combats/room";
-import { Properties, Spawns, Timers, Build, Damage, Ui, ContextedProperties } from "pixel_combats/room";
+import { Teams, Properties, Spawns, Timers, Build, Damage, Ui, ContextedProperties } from "pixel_combats/room";
 import { Color } from "pixel_combats/basic";
 ```
 
