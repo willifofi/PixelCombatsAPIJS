@@ -10,7 +10,7 @@ import {
 } from 'pixel_combats/room';
 
 //ветка basic_api.Index - индекс или воксельная координата
-//ветка basic_api.Vector3 - 
+//ветка basic_api.Vector3 - координата в 3д мире
 import { Index, Vector3 } from 'pixel_combats/basic';
 
 // возвращает всех игроков в комнате (get)
