@@ -5,7 +5,7 @@
 ## Импорт
 
 ```ts
-import { Game } from "pixel_combats/room";
+import { Game, Ui } from "pixel_combats/room";
 ```
 
 > Этот импорт предоставляет доступ к управлению состоянием игры: завершению, перезапуску и обработке событий победы.
@@ -20,9 +20,7 @@ import { Game } from "pixel_combats/room";
 - **Тип**: `boolean`
 - **Пример**:
 ```ts
-if (Game.IsGameOver) {
-  console.log("Игра уже окончена.");
-}
+if (Game.IsGameOver) Ui.GetContext().Hint.Value = "Игра уже окончена";
 ```
 
 ---
@@ -91,7 +89,7 @@ Game.GameOver(playerLeaderBoard);
 - **Пример**:
 ```ts
 Game.OnGameOver.Add(() => {
-  console.log("Игра окончена");
+  Ui.GetContext().Hint.Value = "Игра окончена";
 });
 ```
 
@@ -106,7 +104,7 @@ Game.OnGameOver.Add(() => {
 ```ts
 Game.OnTeamsWin.Add((winners) => {
   winners.forEach(team => {
-    console.log(`Команда ${team.Id} выиграла!`);
+    Ui.GetContext(team).Hint.Value = `Команда ${team.Id} выиграла!`;
   });
 });
 ```
@@ -122,29 +120,8 @@ Game.OnTeamsWin.Add((winners) => {
 ```ts
 Game.OnPlayersWin.Add((winners) => {
   winners.forEach(player => {
-    console.log(`Игрок ${player.Name} выиграл!`);
+    Ui.GetContext(player).Hint.Value = `Игрок ${player.Name} выиграл!`;
   });
 });
 ```
 
----
-
-## Применение
-
-Эти методы и события полезны при реализации:
-
-- Системы завершения игры по условиям (например, уничтожение базы, таймер, сбор ресурсов).
-- Подсчёта результатов и наград.
-- Обновления интерфейса по завершении матча.
-- Отправки уведомлений о победе игрокам и командам.
-
----
-
-## Лицензия
-
-Данный материал основан на SDK [Pixel Combats](https://pixel.combats.fun/), распространяемом согласно его собственным лицензионным соглашениям.
-
---- 
-
-Вы можете сохранить этот файл как `GAME_API.md` и добавить его в свой репозиторий с другими разделами документации.  
-Если нужно — могу также оформить таблицы, примеры и структуру под конкретный стиль документации.
