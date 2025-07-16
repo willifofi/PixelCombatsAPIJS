@@ -1,5 +1,16 @@
 // ветка room_api.Teams -  Сервис работы с командами
 import { Teams } from "pixel_combats/room";
+import { 
+  Teams,              /* ветка services.Teams -      сервис работы с командами  */       
+  Properties,         /* ветка services.Properties - сервис для работы          */     
+  Spawns,             /* ветка services.Spawns -     сервис для работы          */  
+  Timers,             /* ветка services.Timers -     сервис для работы          */ 
+  Build,              /* ветка services.Build -      сервис для работы          */
+  Damage,             /* ветка services.Damage -     сервис для работы          */
+  Ui,                 /* ветка services.Ui -         сервис для работы          */
+  ContextedProperties /* ветка services.ContextedProperties - сервис для работы */    
+} from 'pixel_combats/room';
+
 // ветка basic_api.Color - Сервис работы с цветом
 import { Color } from "pixel_combats/basic";
 
@@ -40,3 +51,59 @@ Teams.OnRequestJoinTeam.Add(function(player, team){});
 Teams.OnAddTeam.Add(function(team){});
 
 // --- апи команды ---
+
+// ID команды
+const team_id = get_team.Id;
+// имя команды, которое видит игрок
+const team_name = get_team.Name;
+// цвет команды
+const team_color = get_team.Color;}
+// если истина, то команда активна
+// неактивная команда это либо та, которая удалилась в процессе игры, либо не существующая по каким-то причинам в комнате
+// если запросить ссылку на несуществующую команду, то такая ссылка будет получена, но будет неактивна, пока ее не добавят через Teams.Add
+const team_id = get_team.IsActive;
+// возвращает количество живых игроков в команде
+const team_id = GetAlivePlayersCount();
+
+// контекст переменных игрока (см сервис PropertiesService)
+const team_prop = Properties.GetContext(get_team);
+// апи спавнов игрока (см сервис PropertiesService)
+const team_spawns = Spawns.GetContext(get_team);
+// апи инвентаря игрока (см сервис PropertiesService)
+const team_inventory = Inventory.GetContext(get_team);
+// таймеры игрока (см сервис PropertiesService)
+const team_timers = Timers.GetContext(get_team);
+// строительство игрока (см сервис PropertiesService)
+const team_bild = Build.GetContext(get_team);
+// контекст урона (см сервис PropertiesService)
+const team_damage = Damage.GetContext(get_team);
+// контекст пользовательского интерфейса (см сервис UIService)
+const team_ui = Ui.GetContext(get_team);
+// контекстные свойства (см сервис PropertiesService)
+const team_prop_context = contextedProperties.GetContext(get_team);
+
+// сколько игроков в команде
+const t_pls_count = get_team.Count;
+// все игроки в команде
+// <para>не рекомендуется вызывать каждый раз в цикле</para>
+const t_pls_all = get_team.Players;
+
+// возвращает истину, если игрок есть в команде
+// <param name="player">игрок</param>
+// <returns>истина, если игрок есть в команде</returns>
+get_team.Contains(player);
+// Добавляет игрока в команду. 
+// Если игрок уже есть в команде, то ничего не происходит
+// player - игрок
+get_team.Add(player);
+// Исключает игрока из команды.
+// Если игрока в команде нет, то ничего не происходит
+// <param name="player">игрок</param>
+get_team.Remove(player);
+// убирает всех игроков из команды, делая их вне команд
+get_team.Clear();
+
+// добавился игрок
+get_team.OnAddPlayer.Add(function(player){});
+// удалился игрок
+get_team.OnRemove.Add(function(player){});
