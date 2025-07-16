@@ -167,7 +167,7 @@ Ui.GetContext(team).Hint.Value = `Живых игроков: ${alive}`;
 | `Build`               | `Build.GetContext(team)`         | Параметры строительства             |
 | `Damage`              | `Damage.GetContext(team)`        | Регистрация урона                   |
 | `Ui`                  | `Ui.GetContext(team)`            | UI команды                          |
-| `ContextedProperties` | `ContextedProperties.GetContext(team)` | Контекстные свойства        |
+| `сontextedProperties` | `ContextedProperties.GetContext(team)` | Контекстные свойства        |
 
 ---
 
