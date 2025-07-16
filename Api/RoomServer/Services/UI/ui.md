@@ -5,11 +5,9 @@
 ## Импорты
 
 ```ts
-import { Ui } from "pixel_combats/room";
-import { Teams, Players } from "pixel_combats/room";
+import { Ui, Teams, Players } from "pixel_combats/room";
 ```
-
-> Эти импорты предоставляют доступ к контекстам UI на уровне комнаты, команд и игроков.
+> Этот импорт предоставляет доступ к контекстам UI на уровне комнаты, команд и игроков.
 
 ---
 
